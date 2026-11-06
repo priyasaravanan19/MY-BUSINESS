@@ -3,3 +3,4 @@ Flask
 Flask-Cors
 python-dotenv
 resend
+gunicorn
