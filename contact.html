@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Contact Pragu Software Solutions for general enquiries, partnerships, support and business communication.">
+
+    <title>Contact Us | Pragu Software Solutions</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        :root {
+            --contact-purple: #7C3AED;
+            --contact-purple-light: #A78BFA;
+            --contact-blue: #2563EB;
+            --contact-blue-light: #60A5FA;
+            --contact-bg: #F8F7FF;
+            --contact-text: #17142F;
+            --contact-soft: #64748B;
+            --contact-border: rgba(124,58,237,.14);
+            --contact-gradient: linear-gradient(135deg,#7C3AED,#2563EB);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; font-family: Inter, Arial, sans-serif; }
+        a { -webkit-tap-highlight-color: transparent; }
+
+        .general-contact-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 150px 25px 90px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 15% 20%,rgba(124,58,237,.12),transparent 32%),
+                radial-gradient(circle at 85% 30%,rgba(37,99,235,.12),transparent 32%),
+                #FFFFFF;
+        }
+
+        .general-contact-hero::before,
+        .general-contact-hero::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+        }
+
+        .general-contact-hero::before {
+            background: var(--contact-purple);
+            opacity: .07;
+            top: -250px;
+            left: -150px;
+        }
+
+        .general-contact-hero::after {
+            background: var(--contact-blue);
+            opacity: .07;
+            right: -150px;
+            bottom: -250px;
+        }
+
+        .general-contact-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+            animation: contactFadeUp .9s ease forwards;
+        }
+
+        .general-contact-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 18px;
+            border-radius: 30px;
+            background: rgba(124,58,237,.07);
+            border: 1px solid rgba(124,58,237,.16);
+            color: var(--contact-purple);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+        }
+
+        .general-contact-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--contact-purple);
+            box-shadow: 0 0 15px rgba(124,58,237,.6);
+            animation: contactPulse 2s infinite;
+        }
+
+        .general-contact-hero h1 {
+            font-size: clamp(44px,7vw,78px);
+            line-height: 1.04;
+            color: var(--contact-text);
+            margin: 0 0 25px;
+            letter-spacing: -2px;
+        }
+
+        .general-contact-gradient {
+            background: var(--contact-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .general-contact-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: var(--contact-soft);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .general-contact-main {
+            padding: 100px 25px 120px;
+            background: var(--contact-bg);
+        }
+
+        .general-contact-container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .general-contact-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 35px;
+            align-items: stretch;
+        }
+
+        .general-info-card {
+            padding: 45px;
+            border-radius: 30px;
+            background: linear-gradient(145deg,#0B1024,#11183A);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(15,23,42,.18);
+        }
+
+        .general-info-card::before,
+        .general-info-card::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .general-info-card::before {
+            width: 300px;
+            height: 300px;
+            background: var(--contact-purple);
+            opacity: .16;
+            right: -120px;
+            top: -120px;
+        }
+
+        .general-info-card::after {
+            width: 220px;
+            height: 220px;
+            background: var(--contact-blue);
+            opacity: .12;
+            left: -100px;
+            bottom: -100px;
+        }
+
+        .general-info-content { position: relative; z-index: 2; }
+
+        .general-info-label {
+            color: var(--contact-purple-light);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .general-info-card h2 {
+            font-size: 38px;
+            line-height: 1.15;
+            margin: 0 0 18px;
+        }
+
+        .general-info-card h2 span { color: var(--contact-blue-light); }
+
+        .general-info-description {
+            color: rgba(255,255,255,.68);
+            line-height: 1.75;
+            margin-bottom: 30px;
+        }
+
+        .general-contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+        }
+
+        .general-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 16px;
+            border-radius: 16px;
+            background: rgba(255,255,255,.055);
+            border: 1px solid rgba(255,255,255,.08);
+            transition: .3s ease;
+            color: white;
+            min-width: 0;
+            text-decoration: none;
+        }
+
+        a.general-contact-item:hover {
+            transform: translateX(6px);
+            background: rgba(255,255,255,.11);
+            border-color: rgba(167,139,250,.4);
+        }
+
+        .general-contact-icon {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg,rgba(124,58,237,.25),rgba(37,99,235,.25));
+            color: var(--contact-purple-light);
+            font-size: 20px;
+        }
+
+        .general-contact-text {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        .general-contact-text small {
+            color: rgba(255,255,255,.5);
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .general-contact-text strong {
+            color: rgba(255,255,255,.94);
+            font-size: 14px;
+            font-weight: 600;
+            overflow-wrap: anywhere;
+        }
+
+        .general-contact-hint {
+            margin-top: 28px;
+            padding: 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,.1);
+            background: rgba(255,255,255,.045);
+            color: rgba(255,255,255,.68);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .general-form-card {
+            padding: 45px;
+            border-radius: 30px;
+            background: #FFFFFF;
+            border: 1px solid var(--contact-border);
+            box-shadow: 0 20px 60px rgba(15,23,42,.07);
+            min-width: 0;
+        }
+
+        .general-form-heading { margin-bottom: 32px; }
+
+        .general-form-heading small {
+            color: var(--contact-purple);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .general-form-heading h2 {
+            color: var(--contact-text);
+            font-size: 34px;
+            margin: 8px 0 10px;
+        }
+
+        .general-form-heading p {
+            color: var(--contact-soft);
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .general-form {
+            display: flex;
+            flex-direction: column;
+            gap: 21px;
+        }
+
+        .general-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .general-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 0;
+        }
+
+        .general-form-group label {
+            color: var(--contact-text);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .general-form-group input,
+        .general-form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 13px;
+            border: 1px solid rgba(100,116,139,.2);
+            outline: none;
+            background: #F8FAFC;
+            color: var(--contact-text);
+            font-family: inherit;
+            font-size: 14px;
+            transition: .25s ease;
+        }
+
+        .general-form-group input::placeholder,
+        .general-form-group textarea::placeholder {
+            color: #94A3B8;
+        }
+
+        .general-form-group input:focus,
+        .general-form-group textarea:focus {
+            border-color: var(--contact-purple);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 4px rgba(124,58,237,.08);
+        }
+
+        .general-form-group textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .general-submit {
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px 25px;
+            border-radius: 14px;
+            background: var(--contact-gradient);
+            color: white;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 800;
+            box-shadow: 0 12px 30px rgba(124,58,237,.2);
+            transition: .3s ease;
+        }
+
+        .general-submit span { font-size: 18px; transition: .3s ease; }
+
+        .general-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(37,99,235,.25);
+        }
+
+        .general-submit:hover span { transform: translateX(5px); }
+
+        .general-submit:disabled {
+            opacity: .7;
+            cursor: wait;
+            transform: none;
+        }
+
+        .general-form-note {
+            margin: -7px 0 0;
+            color: var(--contact-soft);
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .direct-contact-options {
+            margin-top: 22px;
+            padding: 20px;
+            border: 1px solid #ddd6fe;
+            border-radius: 16px;
+            background: #faf9ff;
+        }
+
+        .direct-contact-options[hidden] { display: none; }
+
+        .direct-contact-options h3 {
+            margin: 0 0 8px;
+            color: #17142F;
+            font-size: 17px;
+        }
+
+        .direct-contact-options p {
+            margin: 0 0 16px;
+            color: #64748B;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .direct-contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        .direct-contact-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 17px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: transform .2s ease;
+        }
+
+        .direct-contact-links a:hover { transform: translateY(-2px); }
+        .direct-whatsapp { background: #16A34A; }
+        .direct-email { background: #6254e8; }
+
+        .form-status {
+            display: none;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .form-status.visible { display: block; }
+        .form-status.error { background: #fff1f2; color: #be123c; }
+        .form-status.success { background: #ecfdf5; color: #047857; }
+
+        .communication-section { padding: 100px 25px; background: #FFFFFF; }
+
+        .communication-heading {
+            max-width: 700px;
+            text-align: center;
+            margin: 0 auto 55px;
+        }
+
+        .communication-heading small {
+            color: var(--contact-purple);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .communication-heading h2 {
+            color: var(--contact-text);
+            font-size: clamp(32px,5vw,48px);
+            margin: 10px 0 15px;
+        }
+
+        .communication-heading h2 span {
+            background: var(--contact-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .communication-heading p { color: var(--contact-soft); line-height: 1.75; }
+
+        .communication-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+
+        .communication-card {
+            padding: 30px 24px;
+            border-radius: 22px;
+            background: #F8F7FF;
+            border: 1px solid var(--contact-border);
+            transition: .35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .communication-card::before {
+            content: "";
+            position: absolute;
+            height: 3px;
+            width: 0;
+            left: 0;
+            top: 0;
+            background: var(--contact-gradient);
+            transition: width .35s ease;
+        }
+
+        .communication-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(124,58,237,.1);
+        }
+
+        .communication-card:hover::before { width: 100%; }
+
+        .communication-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: linear-gradient(135deg,rgba(124,58,237,.1),rgba(37,99,235,.1));
+            color: var(--contact-purple);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .communication-card h3 { color: var(--contact-text); font-size: 18px; margin: 0 0 10px; }
+        .communication-card p { color: var(--contact-soft); font-size: 13px; line-height: 1.7; margin: 0; }
+
+        .contact-quote-section { padding: 70px 25px 110px; background: #FFFFFF; }
+
+        .contact-quote-card {
+            max-width: 1100px;
+            margin: auto;
+            padding: 65px 45px;
+            border-radius: 30px;
+            text-align: center;
+            background: linear-gradient(135deg,#0A0E22,#121B42);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(15,23,42,.15);
+        }
+
+        .contact-quote-content { position: relative; z-index: 2; }
+
+        .contact-quote-card h2 {
+            color: white;
+            font-size: clamp(30px,5vw,48px);
+            margin: 0 0 15px;
+        }
+
+        .contact-quote-card h2 span { color: var(--contact-purple-light); }
+
+        .contact-quote-card p {
+            max-width: 620px;
+            margin: 0 auto 28px;
+            color: rgba(255,255,255,.65);
+            line-height: 1.7;
+        }
+
+        .contact-quote-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 27px;
+            border-radius: 30px;
+            background: #FFFFFF;
+            color: #11152C;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 800;
+            transition: .3s ease;
+        }
+
+        .contact-quote-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255,255,255,.12);
+        }
+
+        @keyframes contactFadeUp {
+            from { opacity: 0; transform: translateY(35px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes contactPulse {
+            0%,100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: .6; }
+        }
+
+        body.dark-theme .general-contact-hero {
+            background:
+                radial-gradient(circle at 15% 20%,rgba(124,58,237,.16),transparent 32%),
+                radial-gradient(circle at 85% 30%,rgba(37,99,235,.14),transparent 32%),
+                #070B1A;
+        }
+
+        body.dark-theme .general-contact-hero h1 { color: #F8FAFC; }
+        body.dark-theme .general-contact-hero p { color: #94A3B8; }
+
+        body.dark-theme .general-contact-main,
+        body.dark-theme .communication-section,
+        body.dark-theme .contact-quote-section { background: #070B1A; }
+
+        body.dark-theme .general-form-card,
+        body.dark-theme .communication-card {
+            background: #0D1329;
+            border-color: rgba(167,139,250,.14);
+        }
+
+        body.dark-theme .general-form-heading h2,
+        body.dark-theme .communication-heading h2,
+        body.dark-theme .communication-card h3 { color: #F8FAFC; }
+
+        body.dark-theme .general-form-heading p,
+        body.dark-theme .communication-heading p,
+        body.dark-theme .communication-card p { color: #94A3B8; }
+
+        body.dark-theme .general-form-group label { color: #E2E8F0; }
+
+        body.dark-theme .general-form-group input,
+        body.dark-theme .general-form-group textarea {
+            background: #080D20;
+            border-color: rgba(148,163,184,.16);
+            color: #F8FAFC;
+        }
+
+        body.dark-theme .general-form-group input:focus,
+        body.dark-theme .general-form-group textarea:focus {
+            background: #0A1026;
+            border-color: var(--contact-purple);
+        }
+
+        body.dark-theme .general-form-note { color: #94A3B8; }
+
+        body.dark-theme .direct-contact-options {
+            background: #17152c;
+            border-color: #38305e;
+        }
+
+        body.dark-theme .direct-contact-options h3 { color: #F8FAFC; }
+        body.dark-theme .direct-contact-options p { color: #c4c4d8; }
+
+        @media (max-width: 950px) {
+            .general-contact-grid { grid-template-columns: 1fr; }
+            .communication-grid { grid-template-columns: repeat(2,1fr); }
+        }
+
+        @media (max-width: 700px) {
+            .general-contact-hero { min-height: 60vh; padding: 130px 20px 75px; }
+            .general-contact-hero h1 { letter-spacing: -1px; }
+            .general-contact-hero p { font-size: 15px; }
+            .general-contact-main { padding: 70px 18px 80px; }
+
+            .general-info-card, .general-form-card {
+                padding: 30px 22px;
+                border-radius: 24px;
+            }
+
+            .general-info-card h2 { font-size: 31px; }
+            .general-form-heading h2 { font-size: 29px; }
+            .general-form-row { grid-template-columns: 1fr; }
+            .communication-section { padding: 75px 18px; }
+            .communication-grid { grid-template-columns: 1fr; }
+            .contact-quote-section { padding: 55px 18px 80px; }
+            .contact-quote-card { padding: 50px 22px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">
+        <img src="images/pragu-logo.png" alt="Pragu Software Solutions" class="logo-image">
+        <div class="logo-name">PRAGU SOFTWARE SOLUTIONS</div>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Our Work</a>
+        <a href="contact.html" class="active">Contact Us</a>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+            <span id="themeIcon">☾</span>
+        </button>
+
+        <a href="quote.html" class="quote-btn">Get a Quote <span>→</span></a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation menu">☰</button>
+</header>
+
+<main>
+    <section class="general-contact-hero">
+        <div class="general-contact-content">
+            <div class="general-contact-label">
+                <span class="general-contact-dot"></span>
+                LET'S CONNECT
+            </div>
+            <h1>Let's <span class="general-contact-gradient">Talk Together.</span></h1>
+            <p>Have a question, partnership idea, or simply want to know more about Pragu Software Solutions? We'd love to hear from you.</p>
+        </div>
+    </section>
+
+    <section class="general-contact-main">
+        <div class="general-contact-container">
+            <div class="general-contact-grid">
+
+                <div class="general-info-card">
+                    <div class="general-info-content">
+                        <div class="general-info-label">GET IN TOUCH</div>
+                        <h2>We're Here <span>To Help.</span></h2>
+                        <p class="general-info-description">Choose the easiest way to reach us. We're happy to discuss your ideas and help you find the right solution.</p>
+
+                        <div class="general-contact-items">
+                            <a href="https://wa.me/918015763225" target="_blank" rel="noopener noreferrer" class="general-contact-item" aria-label="Contact us on WhatsApp">
+                                <div class="general-contact-icon">💬</div>
+                                <div class="general-contact-text">
+                                    <small>WHATSAPP / PHONE</small>
+                                    <strong>+91 8015763225 ↗</strong>
+                                </div>
+                            </a>
+
+                            <a href="mailto:priya19072006@gmail.com" class="general-contact-item" aria-label="Send us an email">
+                                <div class="general-contact-icon">✉</div>
+                                <div class="general-contact-text">
+                                    <small>EMAIL ADDRESS</small>
+                                    <strong>priya19072006@gmail.com ↗</strong>
+                                </div>
+                            </a>
+
+                            <div class="general-contact-item">
+                                <div class="general-contact-icon">◉</div>
+                                <div class="general-contact-text">
+                                    <small>AVAILABILITY</small>
+                                    <strong>Monday — Saturday</strong>
+                                </div>
+                            </div>
+
+                            <div class="general-contact-item">
+                                <div class="general-contact-icon">↗</div>
+                                <div class="general-contact-text">
+                                    <small>RESPONSE TIME</small>
+                                    <strong>Within 24 Hours</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="general-contact-hint">✨ Have an idea or question? Contact us through WhatsApp or email, or send your enquiry using the form.</div>
+                    </div>
+                </div>
+
+                <div class="general-form-card">
+                    <div class="general-form-heading">
+                        <small>SEND A MESSAGE</small>
+                        <h2>How Can We Help?</h2>
+                        <p>Share your details and tell us what you'd like to discuss. Submit through the website or use WhatsApp and email as alternatives.</p>
+                    </div>
+
+                    <form class="general-form" id="generalContactForm">
+                        <div class="general-form-row">
+                            <div class="general-form-group">
+                                <label for="generalName">Full Name *</label>
+                                <input type="text" id="generalName" name="name" placeholder="Enter your name" autocomplete="name" required>
+                            </div>
+
+                            <div class="general-form-group">
+                                <label for="generalEmail">Email Address *</label>
+                                <input type="email" id="generalEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
+                            </div>
+                        </div>
+
+                        <div class="general-form-row">
+                            <div class="general-form-group">
+                                <label for="generalPhone">Phone Number</label>
+                                <input type="tel" id="generalPhone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+                            </div>
+
+                            <div class="general-form-group">
+                                <label for="generalSubject">Subject *</label>
+                                <input type="text" id="generalSubject" name="subject" placeholder="What would you like to discuss?" required>
+                            </div>
+                        </div>
+
+                        <div class="general-form-group">
+                            <label for="generalMessage">Your Message *</label>
+                            <textarea id="generalMessage" name="message" placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="general-submit">
+                            <span class="submit-label">Send Message</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                        <p class="general-form-note">If email submission fails, you can continue through WhatsApp or email. Messages sent using those apps must be confirmed by you.</p>
+
+                        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+
+                        <div id="directContactOptions" class="direct-contact-options" hidden>
+                            <h3>Choose how to send your message</h3>
+                            <p>Your details have been added to the draft. Open WhatsApp or email and press Send.</p>
+                            <div class="direct-contact-links">
+                                <a id="directWhatsApp" class="direct-whatsapp" href="#" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+                                <a id="directEmail" class="direct-email" href="#">✉ Email</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="communication-section">
+        <div class="communication-heading">
+            <small>HOW CAN WE CONNECT?</small>
+            <h2>We're Open To <span>Conversations.</span></h2>
+            <p>Whatever you'd like to discuss, we're always happy to hear from you.</p>
+        </div>
+
+        <div class="communication-grid">
+            <article class="communication-card">
+                <div class="communication-icon">?</div>
+                <h3>General Enquiries</h3>
+                <p>Questions about our company, services, capabilities or how we work? Send us a message.</p>
+            </article>
+
+            <article class="communication-card">
+                <div class="communication-icon">↗</div>
+                <h3>Business &amp; Partnerships</h3>
+                <p>Interested in collaborating, partnering or building something together? Let's connect.</p>
+            </article>
+
+            <article class="communication-card">
+                <div class="communication-icon">⚙</div>
+                <h3>Support &amp; Assistance</h3>
+                <p>Need help with an existing project or service? Contact us for assistance.</p>
+            </article>
+
+            <article class="communication-card">
+                <div class="communication-icon">✦</div>
+                <h3>Careers &amp; Opportunities</h3>
+                <p>Interested in opportunities with Pragu Software Solutions? We'd love to hear from you.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="contact-quote-section">
+        <div class="contact-quote-card">
+            <div class="contact-quote-content">
+                <h2>Have a Project <span>In Mind?</span></h2>
+                <p>For project requirements, pricing and detailed estimates, request a quote from our team.</p>
+                <a href="quote.html" class="contact-quote-btn">Get a Quote <span>→</span></a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <a href="index.html" class="logo">
+                <img src="images/pragu-logo.png" alt="Pragu Software Solutions" class="logo-image">
+                <div class="logo-name">PRAGU SOFTWARE SOLUTIONS</div>
+            </a>
+            <p>Building modern digital solutions that help businesses grow and move forward.</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Company</h3>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="work.html">Our Work</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Services</h3>
+            <a href="services.html">Website Development</a>
+            <a href="services.html">Web Applications</a>
+            <a href="services.html">AI Solutions</a>
+            <a href="services.html">E-Commerce</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Connect</h3>
+            <a href="https://wa.me/918015763225" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="mailto:priya19072006@gmail.com">priya19072006@gmail.com</a>
+            <a href="quote.html">Request a Quote</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© <span id="currentYear">2026</span> Pragu Software Solutions. All Rights Reserved.</span>
+        <span>Built with purpose &amp; technology.</span>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+
+<!-- FLASK BACKEND CONTACT FORM -->
+<script>
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+    const contactForm = document.getElementById("generalContactForm");
+    const submitButton = contactForm.querySelector(".general-submit");
+    const submitLabel = submitButton.querySelector(".submit-label");
+    const formStatus = document.getElementById("formStatus");
+    const directContactOptions = document.getElementById("directContactOptions");
+    const directWhatsApp = document.getElementById("directWhatsApp");
+    const directEmail = document.getElementById("directEmail");
+
+    const WHATSAPP_NUMBER = "918015763225";
+    const CONTACT_EMAIL = "priya19072006@gmail.com";
+
+    // For local testing. Change this URL after deploying your Flask backend.
+    const CONTACT_API_URL = "http://127.0.0.1:5000/api/contact";
+
+    function showStatus(message, type) {
+        formStatus.textContent = message;
+        formStatus.className = "form-status visible " + type;
+    }
+
+    function prepareDirectContact() {
+        const name = document.getElementById("generalName").value.trim();
+        const email = document.getElementById("generalEmail").value.trim();
+        const phone = document.getElementById("generalPhone").value.trim();
+        const subject = document.getElementById("generalSubject").value.trim();
+        const message = document.getElementById("generalMessage").value.trim();
+
+        const body =
+            "Hello Pragu Software Solutions,\n\n" +
+            "Name: " + name + "\n" +
+            "Email: " + email + "\n" +
+            "Phone: " + (phone || "Not provided") + "\n" +
+            "Subject: " + subject + "\n\n" +
+            "Message:\n" + message;
+
+        directWhatsApp.href =
+            "https://wa.me/" + WHATSAPP_NUMBER +
+            "?text=" + encodeURIComponent(body);
+
+        directEmail.href =
+            "mailto:" + CONTACT_EMAIL +
+            "?subject=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(body);
+    }
+
+    contactForm.addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        if (!contactForm.reportValidity()) return;
+
+        const payload = {
+            name: document.getElementById("generalName").value.trim(),
+            email: document.getElementById("generalEmail").value.trim(),
+            phone: document.getElementById("generalPhone").value.trim(),
+            subject: document.getElementById("generalSubject").value.trim(),
+            message: document.getElementById("generalMessage").value.trim()
+        };
+
+        submitButton.disabled = true;
+        submitLabel.textContent = "Sending...";
+        formStatus.className = "form-status";
+        directContactOptions.hidden = true;
+
+        try {
+            const response = await fetch(CONTACT_API_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            });
+
+            let data;
+
+            try {
+                data = await response.json();
+            } catch {
+                throw new Error("The server returned an invalid response.");
+            }
+
+            if (!response.ok || !data.success) {
+                throw new Error(data.message || "Unable to send your message.");
+            }
+
+            showStatus(
+                "Your message was sent successfully! We'll get back to you soon.",
+                "success"
+            );
+
+            contactForm.reset();
+
+        } catch (error) {
+            console.error("Contact form error:", error);
+
+            prepareDirectContact();
+
+            showStatus(
+                "We couldn't send your message through the website. You can use WhatsApp or email below instead.",
+                "error"
+            );
+
+            directContactOptions.hidden = false;
+
+        } finally {
+            submitButton.disabled = false;
+            submitLabel.textContent = "Send Message";
+        }
+    });
+</script>
+
+</body>
+</html>

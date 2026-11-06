@@ -1,0 +1,1048 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about Pragu Software Solutions, our mission, vision and team.">
+    <title>About Us | Pragu Software Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ABOUT PAGE — LIGHT AND DARK THEME */
+        :root {
+            --about-purple: #7C3AED;
+            --about-purple-light: #A78BFA;
+            --about-blue: #2563EB;
+            --about-blue-light: #60A5FA;
+            --about-bg: #FFFFFF;
+            --about-bg-soft: #F8F7FF;
+            --about-card: #FFFFFF;
+            --about-text: #171329;
+            --about-text-soft: #64748B;
+            --about-border: rgba(124, 58, 237, 0.14);
+            --about-gradient: linear-gradient(135deg, #7C3AED, #2563EB);
+        }
+
+        body.dark-theme {
+            --about-bg: #07111F;
+            --about-bg-soft: #0A1628;
+            --about-card: #0D1B2E;
+            --about-text: #F8FAFC;
+            --about-text-soft: #A8B3C7;
+            --about-border: rgba(167, 139, 250, 0.18);
+        }
+
+        /* ABOUT HERO */
+        .about-hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 150px 25px 100px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.14), transparent 32%),
+                radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.14), transparent 32%),
+                var(--about-bg);
+            transition: background 0.4s ease;
+        }
+
+        body.dark-theme .about-hero {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.18), transparent 32%),
+                radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.16), transparent 32%),
+                #07111F;
+        }
+
+        .about-hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: #7C3AED;
+            opacity: 0.07;
+            filter: blur(120px);
+            top: -250px;
+            left: -150px;
+        }
+
+        .about-hero::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: #2563EB;
+            opacity: 0.07;
+            filter: blur(120px);
+            right: -150px;
+            bottom: -200px;
+        }
+
+        .about-hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+            animation: aboutFadeUp 1s ease forwards;
+        }
+
+        .about-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 17px;
+            border-radius: 30px;
+            background: rgba(124, 58, 237, 0.08);
+            border: 1px solid rgba(124, 58, 237, 0.18);
+            color: var(--about-purple);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .about-label-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--about-purple);
+            box-shadow: 0 0 10px var(--about-purple);
+        }
+
+        .about-hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            color: var(--about-text);
+            margin-bottom: 25px;
+            transition: color 0.3s ease;
+        }
+
+        .about-gradient-text {
+            background: var(--about-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: var(--about-text-soft);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        /* GENERAL SECTIONS */
+        .about-section {
+            padding: 105px 25px;
+            background: var(--about-bg);
+            transition: background 0.4s ease;
+        }
+
+        .about-section.soft {
+            background: var(--about-bg-soft);
+        }
+
+        .about-container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .about-heading {
+            max-width: 700px;
+            margin: 0 auto 55px;
+            text-align: center;
+        }
+
+        .about-heading-label {
+            color: var(--about-purple);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-heading h2 {
+            color: var(--about-text);
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.15;
+            margin: 12px 0 16px;
+        }
+
+        .about-heading p {
+            color: var(--about-text-soft);
+            line-height: 1.75;
+        }
+
+        /* MISSION AND VISION */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .mission-card {
+            position: relative;
+            padding: 42px;
+            border-radius: 25px;
+            background: var(--about-card);
+            border: 1px solid var(--about-border);
+            box-shadow: 0 15px 45px rgba(124, 58, 237, 0.07);
+            overflow: hidden;
+            transition:
+                transform 0.45s ease,
+                box-shadow 0.45s ease,
+                border-color 0.45s ease,
+                background 0.4s ease;
+        }
+
+        body.dark-theme .mission-card {
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.30);
+        }
+
+        .mission-card::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: var(--about-purple);
+            opacity: 0;
+            filter: blur(70px);
+            right: -70px;
+            top: -70px;
+            transition: 0.45s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(124, 58, 237, 0.35);
+            box-shadow: 0 25px 60px rgba(37, 99, 235, 0.12);
+        }
+
+        .mission-card:hover::before {
+            opacity: 0.12;
+        }
+
+        .mission-icon {
+            width: 62px;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background: linear-gradient(
+                135deg,
+                rgba(124, 58, 237, 0.12),
+                rgba(37, 99, 235, 0.10)
+            );
+            color: var(--about-purple);
+            font-size: 26px;
+            margin-bottom: 25px;
+        }
+
+        .mission-card h3 {
+            color: var(--about-text);
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .mission-card p {
+            color: var(--about-text-soft);
+            line-height: 1.8;
+        }
+
+        /* TEAM — THREE EQUAL CARDS */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 26px;
+            align-items: stretch;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            position: relative;
+            width: 100%;
+            min-width: 0;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 32px 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: var(--about-card);
+            border: 1px solid var(--about-border);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(124, 58, 237, 0.05);
+            transition:
+                transform 0.45s ease,
+                box-shadow 0.45s ease,
+                border-color 0.45s ease,
+                background 0.4s ease;
+        }
+
+        body.dark-theme .team-card {
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+        }
+
+        .team-card::after {
+            content: "";
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: var(--about-blue);
+            opacity: 0;
+            filter: blur(70px);
+            left: -70px;
+            bottom: -70px;
+            transition: 0.45s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(37, 99, 235, 0.28);
+            box-shadow: 0 25px 55px rgba(37, 99, 235, 0.12);
+        }
+
+        .team-card:hover::after {
+            opacity: 0.12;
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            margin: 0 auto 22px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--about-gradient);
+            box-shadow: 0 12px 30px rgba(124, 58, 237, 0.22);
+            transition: transform 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .team-card:hover .team-avatar {
+            transform: scale(1.08) rotate(4deg);
+        }
+
+        .team-card h3 {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--about-text);
+            font-size: 17px;
+            line-height: 1.4;
+            margin: 0 0 8px;
+        }
+
+        .team-role {
+            position: relative;
+            z-index: 2;
+            min-height: 20px;
+            color: var(--about-purple);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .team-card p {
+            position: relative;
+            z-index: 2;
+            color: var(--about-text-soft);
+            font-size: 13px;
+            line-height: 1.7;
+            margin-top: 0;
+        }
+
+        /* WHY CHOOSE US */
+        .why-grid-about {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .why-card-about {
+            padding: 32px;
+            border-radius: 22px;
+            background: var(--about-card);
+            border: 1px solid var(--about-border);
+            transition: 0.4s ease, background 0.4s ease;
+        }
+
+        .why-card-about:hover {
+            transform: translateY(-8px);
+            border-color: rgba(124, 58, 237, 0.3);
+            box-shadow: 0 20px 45px rgba(124, 58, 237, 0.09);
+        }
+
+        .why-number-about {
+            color: var(--about-purple);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .why-card-about h3 {
+            color: var(--about-text);
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .why-card-about p {
+            color: var(--about-text-soft);
+            line-height: 1.75;
+            font-size: 14px;
+        }
+
+        /* CALL TO ACTION */
+        .about-cta-section {
+            padding: 80px 25px 110px;
+            background: var(--about-bg);
+            transition: background 0.4s ease;
+        }
+
+        .about-cta {
+            max-width: 1050px;
+            margin: auto;
+            padding: 75px 40px;
+            text-align: center;
+            border-radius: 32px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(
+                135deg,
+                rgba(124, 58, 237, 0.08),
+                rgba(37, 99, 235, 0.08)
+            );
+            border: 1px solid rgba(124, 58, 237, 0.16);
+        }
+
+        body.dark-theme .about-cta {
+            background: linear-gradient(
+                135deg,
+                rgba(124, 58, 237, 0.14),
+                rgba(37, 99, 235, 0.12)
+            );
+            border-color: rgba(167, 139, 250, 0.20);
+        }
+
+        .about-cta::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--about-purple);
+            opacity: 0.08;
+            filter: blur(100px);
+            top: -170px;
+            left: 35%;
+        }
+
+        .about-cta h2 {
+            position: relative;
+            color: var(--about-text);
+            font-size: clamp(30px, 5vw, 48px);
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .about-cta p {
+            position: relative;
+            color: var(--about-text-soft);
+            margin-bottom: 30px;
+        }
+
+        .about-cta-button {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 30px;
+            background: var(--about-gradient);
+            color: #FFFFFF;
+            font-weight: 700;
+            transition: 0.3s ease;
+            box-shadow: 0 12px 30px rgba(124, 58, 237, 0.20);
+            text-decoration: none;
+        }
+
+        .about-cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(37, 99, 235, 0.22);
+        }
+
+        /* SCROLL REVEAL */
+        .about-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .about-reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* HERO ANIMATION */
+        @keyframes aboutFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .team-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 950px) {
+            .why-grid-about {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            .about-hero {
+                min-height: 75vh;
+                padding: 130px 20px 80px;
+            }
+
+            .about-hero p {
+                font-size: 15px;
+            }
+
+            .about-section {
+                padding: 75px 18px;
+            }
+
+            .mission-grid,
+            .team-grid,
+            .why-grid-about {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                max-width: 420px;
+            }
+
+            .team-card h3 {
+                min-height: auto;
+            }
+
+            .mission-card {
+                padding: 32px 25px;
+            }
+
+            .about-cta-section {
+                padding: 55px 18px 80px;
+            }
+
+            .about-cta {
+                padding: 55px 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .about-reveal,
+            .about-hero-content,
+            .team-card,
+            .mission-card,
+            .why-card-about {
+                animation: none;
+                transition: none;
+            }
+
+            .about-reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img
+                src="images/pragu-logo.png"
+                alt="Pragu Software Solutions"
+                class="logo-image"
+            >
+            <div class="logo-name">PRAGU SOFTWARE SOLUTIONS</div>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="services.html">Services</a>
+            <a href="work.html">Our Work</a>
+            <a href="contact.html">Contact Us</a>
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle theme"
+                aria-pressed="false"
+            >
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <a href="contact.html" class="quote-btn">
+                Get a Quote <span>→</span>
+            </a>
+        </nav>
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+    </header>
+
+    <main>
+        <!-- ABOUT HERO -->
+        <section class="about-hero">
+            <div class="about-hero-content">
+                <div class="about-label">
+                    <span class="about-label-dot"></span>
+                    ABOUT PRAGU SOFTWARE SOLUTIONS
+                </div>
+
+                <h1>
+                    Building Ideas Into
+                    <span class="about-gradient-text">Digital Reality.</span>
+                </h1>
+
+                <p>
+                    We are a technology-driven team focused
+                    on transforming ideas into modern,
+                    meaningful and scalable digital solutions
+                    that create real-world impact.
+                </p>
+            </div>
+        </section>
+
+        <!-- MISSION AND VISION -->
+        <section class="about-section soft">
+            <div class="about-container">
+                <div class="about-heading about-reveal">
+                    <span class="about-heading-label">OUR PURPOSE</span>
+                    <h2>
+                        Driven By Purpose,
+                        <span class="about-gradient-text">Built For Impact.</span>
+                    </h2>
+                    <p>
+                        We bring technology, creativity and
+                        strategic thinking together to create
+                        solutions that matter.
+                    </p>
+                </div>
+
+                <div class="mission-grid">
+                    <article class="mission-card about-reveal">
+                        <div class="mission-icon">✦</div>
+                        <h3>Our Mission</h3>
+                        <p>
+                            Our mission is to transform ideas
+                            into meaningful digital experiences
+                            by delivering innovative, scalable
+                            and high-quality technology solutions
+                            that solve real-world problems and
+                            create lasting value.
+                        </p>
+                    </article>
+
+                    <article class="mission-card about-reveal">
+                        <div class="mission-icon">◈</div>
+                        <h3>Our Vision</h3>
+                        <p>
+                            Our vision is to become a trusted
+                            technology partner for businesses
+                            and individuals by shaping the
+                            future through innovation, intelligent
+                            solutions and exceptional digital
+                            experiences.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM: ONLY THREE MEMBERS -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-heading about-reveal">
+                    <span class="about-heading-label">MEET OUR TEAM</span>
+                    <h2>
+                        The People Behind
+                        <span class="about-gradient-text">Us.</span>
+                    </h2>
+                    <p>
+                        A passionate team combining technology,
+                        business strategy, product thinking
+                        and creative design.
+                    </p>
+                </div>
+
+                <div class="team-grid">
+                    <!-- TEAM MEMBER 1 -->
+                    <article class="team-card about-reveal">
+                        <div class="team-avatar">
+                            <img
+                                src="images/team-ceo.jpg"
+                                alt="Founder and CEO"
+                                loading="lazy"
+                            >
+                        </div>
+                        <h3>PRAGADESHWARAN  R</h3>
+                        <div class="team-role">FOUNDER </div>
+                        <p>
+                            Leads the company's technology
+                            direction, architecture, development
+                            and innovation while turning ideas
+                            into scalable digital solutions.
+                        </p>
+                    </article>
+
+                    <!-- TEAM MEMBER 2 -->
+                    <article class="team-card about-reveal">
+                        <div class="team-avatar">
+                            <img
+                                src="images/team-business.jpg"
+                                alt="Business and Marketing Lead"
+                                loading="lazy"
+                            >
+                        </diV>
+                        <h3> PRIYA S</h3>
+                        <div class="team-role">CEO &amp; BUSINESS LEAD</div>
+                        <p>
+                            Drives business strategy,
+                            partnerships, market opportunities
+                            and sustainable growth while
+                            building strong relationships.
+                        </p>
+                    </article>
+
+                    <!-- TEAM MEMBER 3 -->
+                    <article class="team-card about-reveal">
+                        <div class="team-avatar">
+                            <img
+                                src="images/team-uiux.jpg"
+                                alt="Product Management Lead"
+                                loading="lazy"
+                            >
+                        </div>
+                        <h3>VARSHINI S</h3>
+                        <div class="team-role">MARKETING LEAD</div>
+                        <p>
+                            Connects user needs with marketing
+                            strategy, manages development and
+                            ensures every solution delivers
+                            meaningful value.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY PRAGU -->
+        <section class="about-section soft">
+            <div class="about-container">
+                <div class="about-heading about-reveal">
+                    <span class="about-heading-label">WHY PRAGU</span>
+                    <h2>
+                        More Than Code.
+                        <span class="about-gradient-text">We Build With Purpose.</span>
+                    </h2>
+                    <p>
+                        We don't just build software.
+                        We build solutions around people,
+                        problems and possibilities.
+                    </p>
+                </div>
+
+                <div class="why-grid-about">
+                    <article class="why-card-about about-reveal">
+                        <div class="why-number-about">01 — INNOVATION</div>
+                        <h3>Think Beyond</h3>
+                        <p>
+                            We explore modern technologies
+                            and creative approaches to build
+                            solutions that stay ahead of
+                            the curve.
+                        </p>
+                    </article>
+
+                    <article class="why-card-about about-reveal">
+                        <div class="why-number-about">02 — QUALITY</div>
+                        <h3>Built With Care</h3>
+                        <p>
+                            Every product is developed with
+                            attention to performance, usability,
+                            reliability and long-term scalability.
+                        </p>
+                    </article>
+
+                    <article class="why-card-about about-reveal">
+                        <div class="why-number-about">03 — PEOPLE</div>
+                        <h3>User First</h3>
+                        <p>
+                            We put people at the center of
+                            our solutions, creating experiences
+                            that are simple, useful and enjoyable.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="about-cta-section">
+            <div class="about-cta about-reveal">
+                <h2>
+                    Let's Build Something
+                    <span class="about-gradient-text">Great Together.</span>
+                </h2>
+                <p>
+                    Have an idea, a challenge or a vision?
+                    Let's turn it into something meaningful.
+                </p>
+                <a href="contact.html" class="about-cta-button">
+                    Start a Conversation <span>→</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img
+                        src="images/pragu-logo.png"
+                        alt="Pragu Software Solutions"
+                        class="logo-image"
+                        loading="lazy"
+                    >
+                    <div class="logo-name">PRAGU SOFTWARE SOLUTIONS</div>
+                </a>
+                <p>
+                    Building modern digital solutions
+                    that help businesses grow and
+                    move forward.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="work.html">Our Work</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <a href="services.html">Website Development</a>
+                <a href="services.html">Web Applications</a>
+                <a href="services.html">AI Solutions</a>
+                <a href="services.html">E-Commerce</a>
+            </div>
+
+            <!-- UPDATED SOCIAL LINKS AND EMAIL -->
+            <div class="footer-column">
+                <h3>Connect</h3>
+
+                <a
+                    href="https://www.linkedin.com/in/pragadeshwaran05/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >LinkedIn</a>
+
+                <a
+                    href="https://www.instagram.com/hey_itz_pragu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Instagram</a>
+
+                <a
+                    href="https://github.com/Pragadeshwaran05/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >GitHub</a>
+
+                <a href="mailto:priya19072006@gmail.com">
+                    priya19072006@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Pragu Software Solutions. All Rights Reserved.</span>
+            <span>Built with purpose &amp; technology.</span>
+        </div>
+    </footer>
+
+    <script>
+        /* SCROLL REVEAL */
+        const aboutReveal = document.querySelectorAll(".about-reveal");
+
+        if ("IntersectionObserver" in window) {
+            const aboutObserver = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.15 }
+            );
+
+            aboutReveal.forEach((element) => {
+                aboutObserver.observe(element);
+            });
+        } else {
+            aboutReveal.forEach((element) => {
+                element.classList.add("show");
+            });
+        }
+
+        /* THEME SYSTEM */
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+
+        function applyTheme(theme) {
+            const isDark = theme === "dark";
+
+            document.body.classList.toggle("dark-theme", isDark);
+
+            if (themeIcon) {
+                themeIcon.textContent = isDark ? "☀" : "☾";
+            }
+
+            if (themeToggle) {
+                themeToggle.setAttribute("aria-pressed", String(isDark));
+            }
+        }
+
+        let savedTheme = "light";
+
+        try {
+            savedTheme = localStorage.getItem("pragu-theme") || "light";
+        } catch (error) {
+            savedTheme = "light";
+        }
+
+        applyTheme(savedTheme);
+
+        if (themeToggle) {
+            themeToggle.addEventListener("click", () => {
+                const isDark = document.body.classList.contains("dark-theme");
+                const nextTheme = isDark ? "light" : "dark";
+
+                applyTheme(nextTheme);
+
+                try {
+                    localStorage.setItem("pragu-theme", nextTheme);
+                } catch (error) {
+                    /* The theme still works if storage is unavailable. */
+                }
+            });
+        }
+
+        /* MOBILE MENU */
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (menuBtn && navLinks) {
+            menuBtn.addEventListener("click", () => {
+                const isOpen = navLinks.classList.toggle("show");
+                menuBtn.setAttribute("aria-expanded", String(isOpen));
+            });
+
+            navLinks.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("show");
+                    menuBtn.setAttribute("aria-expanded", "false");
+                });
+            });
+        }
+
+        /* PAGE TRANSITION */
+        document.querySelectorAll('a[href$=".html"]').forEach((link) => {
+            link.addEventListener("click", (event) => {
+                const href = link.getAttribute("href");
+
+                if (
+                    !href ||
+                    href.startsWith("#") ||
+                    event.ctrlKey ||
+                    event.metaKey ||
+                    event.shiftKey ||
+                    event.altKey ||
+                    link.target === "_blank"
+                ) {
+                    return;
+                }
+
+                const targetUrl = new URL(href, window.location.href);
+
+                if (
+                    targetUrl.origin !== window.location.origin ||
+                    targetUrl.pathname === window.location.pathname
+                ) {
+                    return;
+                }
+
+                event.preventDefault();
+                document.body.classList.add("page-exit");
+
+                window.setTimeout(() => {
+                    window.location.href = targetUrl.href;
+                }, 350);
+            });
+        });
+    </script>
+</body>
+</html>

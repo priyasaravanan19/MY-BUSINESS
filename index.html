@@ -1,0 +1,1004 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Pragu Software Solutions - Modern digital solutions, web development, AI solutions and software services.">
+
+    <title>Pragu Software Solutions</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* ==========================================
+           HOME PAGE ABOUT LOGO CARD
+           Only replaces the blue About card
+        ========================================== */
+
+        .about-logo-card {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff !important;
+            border-radius: 30px;
+            border: 1px solid rgba(124, 58, 237, 0.15);
+
+            box-shadow:
+                0 25px 70px rgba(37, 99, 235, 0.12),
+                0 10px 30px rgba(124, 58, 237, 0.08);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+        .about-logo-card img {
+            width: 72%;
+            max-width: 330px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .about-logo-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 35px 80px rgba(37, 99, 235, 0.18),
+                0 15px 35px rgba(124, 58, 237, 0.12);
+        }
+
+        .about-logo-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .about-logo-card {
+                min-height: 320px;
+            }
+
+            .about-logo-card img {
+                width: 70%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- ==========================================
+     PAGE LOADER
+========================================== -->
+
+<div class="page-loader">
+
+    <div class="loader-logo">
+
+        <img
+            src="images/pragu-logo.png"
+            alt="Pragu Software Solutions"
+        >
+
+    </div>
+
+    <div class="loader-line">
+        <span></span>
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     NAVBAR
+========================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <img
+            src="images/pragu-logo.png"
+            alt="Pragu Software Solutions"
+            class="logo-image"
+        >
+
+        <div class="logo-name">
+            PRAGU SOFTWARE SOLUTIONS
+        </div>
+
+    </a>
+
+    <nav class="nav-links">
+
+        <a href="index.html" class="active">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+        <a href="work.html">
+            Our Work
+        </a>
+
+        <a href="contact.html">
+            Contact Us
+        </a>
+
+        <!-- THEME BUTTON -->
+
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme">
+
+            <span id="themeIcon">
+                ☾
+            </span>
+
+        </button>
+
+        <a href="contact.html" class="quote-btn">
+
+            Get a Quote
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+    </nav>
+
+    <!-- MOBILE MENU -->
+
+    <button
+        class="menu-btn"
+        id="menuBtn">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+<!-- ==========================================
+     MAIN
+========================================== -->
+
+<main>
+
+<!-- ==========================================
+     HERO SECTION
+========================================== -->
+
+<section class="hero">
+
+    <!-- BACKGROUND EFFECTS -->
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-glow glow-one"></div>
+
+    <div class="hero-glow glow-two"></div>
+
+    <!-- HERO CONTENT -->
+
+    <div class="hero-content reveal">
+
+        <div class="hero-badge">
+
+            <span class="badge-dot"></span>
+
+            WELCOME TO PRAGU SOFTWARE SOLUTIONS
+
+        </div>
+
+        <h1>
+
+            We Build
+
+            <span>
+                Digital Experiences
+            </span>
+
+            That Move
+
+            <strong>
+                Businesses Forward.
+            </strong>
+
+        </h1>
+
+        <p>
+
+            We design and develop modern websites,
+            web applications and intelligent digital
+            solutions that help businesses grow,
+            connect and succeed.
+
+        </p>
+
+        <!-- HERO BUTTONS -->
+
+        <div class="hero-buttons">
+
+            <a href="contact.html" class="primary-btn">
+
+                Start Your Project
+
+                <span>
+                    →
+                </span>
+
+            </a>
+
+            <a href="work.html" class="secondary-btn">
+
+                Explore Our Work
+
+                <span>
+                    ↗
+                </span>
+
+            </a>
+
+        </div>
+
+        <!-- TRUST -->
+
+        <div class="hero-trust">
+
+            <div class="avatars">
+
+                <span>PS</span>
+                <span>AI</span>
+                <span>WD</span>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Building Digital Solutions
+                </strong>
+
+                <small>
+                    Designed for real-world impact
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ======================================
+         HERO VISUAL
+    ====================================== -->
+
+    <div class="hero-visual reveal">
+
+        <div class="visual-glow"></div>
+
+        <!-- MAIN DEVICE -->
+
+        <div class="device-card">
+
+            <div class="device-top">
+
+                <div class="device-dots">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <small>
+                    pragu.dev
+                </small>
+
+            </div>
+
+            <div class="device-content">
+
+                <div class="device-label">
+                    DIGITAL SOLUTIONS
+                </div>
+
+                <h2>
+                    Build.
+                    <br>
+
+                    <span>
+                        Launch.
+                    </span>
+
+                    <br>
+
+                    Grow.
+                </h2>
+
+                <div class="device-button">
+                    Get Started →
+                </div>
+
+                <div class="device-bars">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FLOATING CARD 1 -->
+
+        <div class="floating-card floating-project">
+
+            <div class="floating-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <small>
+                    Digital Growth
+                </small>
+
+                <strong>
+                    +85%
+                </strong>
+
+            </div>
+
+        </div>
+
+        <!-- FLOATING CARD 2 -->
+
+        <div class="floating-card floating-code">
+
+            <span>
+                &lt;/&gt;
+            </span>
+
+            <div>
+
+                <small>
+                    Clean Code
+                </small>
+
+                <strong>
+                    Scalable
+                </strong>
+
+            </div>
+
+        </div>
+
+        <!-- FLOATING CARD 3 -->
+
+        <div class="floating-card floating-ai">
+
+            <span>
+                ✦
+            </span>
+
+            <div>
+
+                <small>
+                    AI Powered
+                </small>
+
+                <strong>
+                    Smart Solutions
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     SERVICES PREVIEW
+========================================== -->
+
+<section class="services-preview">
+
+    <div class="section-header reveal">
+
+        <span class="section-label">
+            WHAT WE DO
+        </span>
+
+        <h2>
+
+            Technology That
+
+            <span>
+                Creates Impact.
+            </span>
+
+        </h2>
+
+        <p>
+
+            From simple websites to intelligent
+            applications, we build digital products
+            around your business goals.
+
+        </p>
+
+    </div>
+
+    <div class="service-grid">
+
+        <!-- CARD 1 -->
+
+        <article class="service-card reveal">
+
+            <div class="card-number">
+                01
+            </div>
+
+            <div class="service-icon">
+                &lt;/&gt;
+            </div>
+
+            <h3>
+                Website Development
+            </h3>
+
+            <p>
+
+                Modern, responsive and high-performing
+                websites designed to represent your
+                brand and convert visitors.
+
+            </p>
+
+            <a href="services.html">
+                Explore Service <span>→</span>
+            </a>
+
+        </article>
+
+        <!-- CARD 2 -->
+
+        <article class="service-card reveal">
+
+            <div class="card-number">
+                02
+            </div>
+
+            <div class="service-icon">
+                ◇
+            </div>
+
+            <h3>
+                Web Applications
+            </h3>
+
+            <p>
+
+                Custom web applications built to
+                simplify workflows, automate tasks
+                and solve real business problems.
+
+            </p>
+
+            <a href="services.html">
+                Explore Service <span>→</span>
+            </a>
+
+        </article>
+
+        <!-- CARD 3 -->
+
+        <article class="service-card reveal">
+
+            <div class="card-number">
+                03
+            </div>
+
+            <div class="service-icon">
+                ◎
+            </div>
+
+            <h3>
+                AI Solutions
+            </h3>
+
+            <p>
+
+                Intelligent AI-powered solutions
+                that help businesses automate,
+                analyze and make better decisions.
+
+            </p>
+
+            <a href="services.html">
+                Explore Service <span>→</span>
+            </a>
+
+        </article>
+
+        <!-- CARD 4 -->
+
+        <article class="service-card reveal">
+
+            <div class="card-number">
+                04
+            </div>
+
+            <div class="service-icon">
+                ◈
+            </div>
+
+            <h3>
+                E-Commerce
+            </h3>
+
+            <p>
+
+                Scalable online stores with smooth
+                user experiences designed to help
+                your business sell more.
+
+            </p>
+
+            <a href="services.html">
+                Explore Service <span>→</span>
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     ABOUT PREVIEW
+========================================== -->
+
+<section class="about-preview">
+
+    <div class="about-visual reveal">
+
+        <!-- REPLACED BLUE CARD WITH YOUR LOGO -->
+
+        <div class="about-main-card about-logo-card">
+
+            <img
+                src="images/pragu-logo.png"
+                alt="Pragu Software Solutions Logo"
+            >
+
+        </div>
+
+        <div class="about-floating">
+
+            <strong>
+                Innovation
+            </strong>
+
+            <span>
+                Driven by Technology
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="about-content reveal">
+
+        <span class="section-label">
+            ABOUT US
+        </span>
+
+        <h2>
+
+            We Turn
+
+            <span>
+                Ideas Into
+                Digital Reality.
+            </span>
+
+        </h2>
+
+        <p>
+
+            At Pragu Software Solutions, we believe
+            technology should solve problems, create
+            opportunities and make businesses better.
+
+        </p>
+
+        <p>
+
+            We combine thoughtful design, modern
+            technologies and business-focused
+            development to create digital experiences
+            that people love to use.
+
+        </p>
+
+        <a href="about.html" class="outline-btn">
+            Discover More <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     WHY CHOOSE US
+========================================== -->
+
+<section class="why-section">
+
+    <div class="section-header reveal">
+
+        <span class="section-label">
+            WHY PRAGU
+        </span>
+
+        <h2>
+
+            More Than Code.
+
+            <span>
+                We Build With Purpose.
+            </span>
+
+        </h2>
+
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card reveal">
+
+            <span class="why-icon">✦</span>
+
+            <h3>
+                Modern Technology
+            </h3>
+
+            <p>
+                We use modern tools and technologies
+                to create future-ready digital products.
+            </p>
+
+        </div>
+
+        <div class="why-card reveal">
+
+            <span class="why-icon">◉</span>
+
+            <h3>
+                User Focused
+            </h3>
+
+            <p>
+                Every interface is designed around
+                usability, accessibility and experience.
+            </p>
+
+        </div>
+
+        <div class="why-card reveal">
+
+            <span class="why-icon">↗</span>
+
+            <h3>
+                Growth Mindset
+            </h3>
+
+            <p>
+                We create scalable solutions that
+                grow alongside your business.
+            </p>
+
+        </div>
+
+        <div class="why-card reveal">
+
+            <span class="why-icon">✓</span>
+
+            <h3>
+                Quality First
+            </h3>
+
+            <p>
+                Clean code, reliable performance and
+                attention to every small detail.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     STATS
+========================================== -->
+
+<section class="stats-section">
+
+    <div class="stats-grid">
+
+        <div class="stat-item reveal">
+
+            <strong>
+                50+
+            </strong>
+
+            <span>
+                Ideas & Projects
+            </span>
+
+        </div>
+
+        <div class="stat-item reveal">
+
+            <strong>
+                30+
+            </strong>
+
+            <span>
+                Digital Solutions
+            </span>
+
+        </div>
+
+        <div class="stat-item reveal">
+
+            <strong>
+                10+
+            </strong>
+
+            <span>
+                Technologies
+            </span>
+
+        </div>
+
+        <div class="stat-item reveal">
+
+            <strong>
+                100%
+            </strong>
+
+            <span>
+                Commitment
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     CTA
+========================================== -->
+
+<section class="cta-section">
+
+    <div class="cta-glow"></div>
+
+    <div class="cta-content reveal">
+
+        <span class="section-label">
+            LET'S BUILD SOMETHING GREAT
+        </span>
+
+        <h2>
+
+            Have An Idea?
+
+            <span>
+                Let's Make It Real.
+            </span>
+
+        </h2>
+
+        <p>
+
+            Tell us about your idea, project or
+            business challenge. Let's create a
+            digital solution that makes an impact.
+
+        </p>
+
+        <a href="contact.html" class="primary-btn">
+            Start a Conversation <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="logo">
+
+                <img
+                    src="images/pragu-logo.png"
+                    alt="Pragu Software Solutions"
+                    class="logo-image"
+                >
+
+                <div class="logo-name">
+                    PRAGU SOFTWARE SOLUTIONS
+                </div>
+
+            </a>
+
+            <p>
+
+                Building modern digital solutions
+                that help businesses grow and
+                move forward.
+
+            </p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>
+                Company
+            </h3>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="work.html">
+                Our Work
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>
+                Services
+            </h3>
+
+            <a href="services.html">
+                Website Development
+            </a>
+
+            <a href="services.html">
+                Web Applications
+            </a>
+
+            <a href="services.html">
+                AI Solutions
+            </a>
+
+            <a href="services.html">
+                E-Commerce
+            </a>
+
+        </div>
+
+        <!-- UPDATED SOCIAL LINKS AND EMAIL ONLY -->
+
+        <div class="footer-column">
+
+            <h3>
+                Connect
+            </h3>
+
+            <a
+                href="https://www.linkedin.com/in/pragadeshwaran05/"
+                target="_blank"
+                rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+            <a
+                href="https://www.instagram.com/hey_itz_pragu/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Instagram
+            </a>
+
+            <a
+                href="https://github.com/Pragadeshwaran05/"
+                target="_blank"
+                rel="noopener noreferrer">
+                GitHub
+            </a>
+
+            <a href="mailto:priya19072006@gmail.com">
+                priya19072006@gmail.com
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Pragu Software Solutions.
+            All Rights Reserved.
+        </span>
+
+        <span>
+            Built with purpose & technology.
+        </span>
+
+    </div>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore innovative web, AI, healthcare, cloud and business projects by Pragu Software Solutions.">
+    <title>Our Work | Pragu Software Solutions</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           WORK PAGE THEME — MATCHES ABOUT PAGE
+        ========================================= */
+
+        :root {
+            --work-purple: #7C3AED;
+            --work-purple-light: #A78BFA;
+            --work-blue: #2563EB;
+            --work-bg: #FFFFFF;
+            --work-bg-soft: #F8F7FF;
+            --work-card: #FFFFFF;
+            --work-text: #171329;
+            --work-muted: #64748B;
+            --work-border: rgba(124, 58, 237, 0.14);
+            --work-gradient: linear-gradient(135deg, #7C3AED, #2563EB);
+        }
+
+        body.dark-theme {
+            --work-bg: #07111F;
+            --work-bg-soft: #0A1628;
+            --work-card: #0D1B2E;
+            --work-text: #F8FAFC;
+            --work-muted: #A8B3C7;
+            --work-border: rgba(167, 139, 250, 0.18);
+        }
+
+        body {
+            background: var(--work-bg);
+            color: var(--work-text);
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        .work-page,
+        .work-page * {
+            box-sizing: border-box;
+        }
+
+        .work-page {
+            overflow: hidden;
+            background: var(--work-bg);
+        }
+
+        .work-container {
+            width: min(1150px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        /* HERO */
+
+        .work-hero {
+            min-height: 76vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 145px 20px 95px;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(124,58,237,.14), transparent 32%),
+                radial-gradient(circle at 85% 30%, rgba(37,99,235,.14), transparent 32%),
+                var(--work-bg);
+            transition: background .4s ease;
+        }
+
+        body.dark-theme .work-hero {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(124,58,237,.18), transparent 32%),
+                radial-gradient(circle at 85% 30%, rgba(37,99,235,.16), transparent 32%),
+                #07111F;
+        }
+
+        .work-hero::before,
+        .work-hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(110px);
+            pointer-events: none;
+        }
+
+        .work-hero::before {
+            width: 350px;
+            height: 350px;
+            top: -150px;
+            left: -100px;
+            background: var(--work-purple);
+            opacity: .09;
+        }
+
+        .work-hero::after {
+            width: 350px;
+            height: 350px;
+            right: -100px;
+            bottom: -160px;
+            background: var(--work-blue);
+            opacity: .09;
+        }
+
+        .work-hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 1;
+            animation: workFadeUp .8s ease both;
+        }
+
+        .work-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 17px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(124,58,237,.18);
+            border-radius: 30px;
+            background: rgba(124,58,237,.08);
+            color: var(--work-purple);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.3px;
+        }
+
+        .work-label-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--work-purple);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--work-purple);
+        }
+
+        .work-hero h1 {
+            color: var(--work-text);
+            font-size: clamp(40px, 6vw, 72px);
+            line-height: 1.08;
+            letter-spacing: -2px;
+            margin: 0 0 23px;
+        }
+
+        .work-gradient {
+            background: var(--work-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .work-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--work-muted);
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+        .work-hero-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .work-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .work-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .work-btn-primary {
+            color: #FFFFFF;
+            background: var(--work-gradient);
+            box-shadow: 0 10px 25px rgba(124,58,237,.22);
+        }
+
+        .work-btn-secondary {
+            color: var(--work-text);
+            background: var(--work-card);
+            border: 1px solid var(--work-border);
+        }
+
+        /* STATS */
+
+        .work-stats-section {
+            padding: 0 20px 75px;
+            background: var(--work-bg);
+        }
+
+        .work-stats {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            background: var(--work-card);
+            border: 1px solid var(--work-border);
+            border-radius: 24px;
+            box-shadow: 0 15px 45px rgba(124,58,237,.06);
+            overflow: hidden;
+        }
+
+        .work-stat {
+            text-align: center;
+            padding: 28px 12px;
+            border-right: 1px solid var(--work-border);
+        }
+
+        .work-stat:last-child {
+            border-right: none;
+        }
+
+        .work-stat h3 {
+            margin: 0 0 7px;
+            font-size: clamp(25px, 3vw, 36px);
+            color: var(--work-purple);
+        }
+
+        .work-stat p {
+            margin: 0;
+            color: var(--work-muted);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* GENERAL SECTIONS */
+
+        .work-section {
+            padding: 95px 0;
+            background: var(--work-bg);
+            transition: background .4s ease;
+        }
+
+        .work-section.soft {
+            background: var(--work-bg-soft);
+        }
+
+        .work-heading {
+            max-width: 720px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .work-heading-label {
+            color: var(--work-purple);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .work-heading h2 {
+            color: var(--work-text);
+            font-size: clamp(30px, 4.5vw, 46px);
+            line-height: 1.2;
+            margin: 13px 0 16px;
+        }
+
+        .work-heading p {
+            color: var(--work-muted);
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* PROJECT CARDS — 2 COLUMNS, 4 ROWS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 26px;
+            align-items: stretch;
+        }
+
+        .project-card {
+            --project-color: #7C3AED;
+            position: relative;
+            min-width: 0;
+            min-height: 355px;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            overflow: hidden;
+            background: var(--work-card);
+            border: 1px solid var(--work-border);
+            border-radius: 24px;
+            box-shadow: 0 12px 35px rgba(124,58,237,.045);
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease,
+                border-color .35s ease,
+                background .4s ease;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            top: -100px;
+            right: -90px;
+            border-radius: 50%;
+            background: var(--project-color);
+            opacity: .08;
+            filter: blur(45px);
+            transition: opacity .35s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--project-color);
+            box-shadow: 0 22px 50px rgba(37,99,235,.10);
+        }
+
+        .project-card:hover::before {
+            opacity: .17;
+        }
+
+        .project-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 23px;
+        }
+
+        .project-icon {
+            width: 58px;
+            height: 58px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 17px;
+            color: var(--project-color);
+            background: color-mix(in srgb, var(--project-color) 11%, transparent);
+            font-size: 25px;
+        }
+
+        .project-number {
+            color: var(--work-muted);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .project-category {
+            display: inline-flex;
+            align-self: flex-start;
+            padding: 7px 11px;
+            border-radius: 20px;
+            margin-bottom: 13px;
+            background: color-mix(in srgb, var(--project-color) 10%, transparent);
+            color: var(--project-color);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .4px;
+        }
+
+        .project-card h3 {
+            color: var(--work-text);
+            font-size: 22px;
+            line-height: 1.35;
+            margin: 0 0 12px;
+        }
+
+        .project-description {
+            color: var(--work-muted);
+            font-size: 13px;
+            line-height: 1.8;
+            margin: 0 0 22px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid var(--work-border);
+        }
+
+        .tech-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 10px;
+            background: var(--work-bg-soft);
+            border: 1px solid var(--work-border);
+            border-radius: 9px;
+            color: var(--work-muted);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Project-specific colours */
+
+        .project-cashflow { --project-color: #16A34A; }
+        .project-cafe { --project-color: #D97706; }
+        .project-restaurant { --project-color: #EA580C; }
+        .project-medical { --project-color: #E11D48; }
+        .project-infra { --project-color: #2563EB; }
+        .project-crm { --project-color: #7C3AED; }
+        .project-ecommerce { --project-color: #DB2777; }
+        .project-cloud { --project-color: #0891B2; }
+
+        /* TECHNOLOGY ICONS */
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .tech-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-width: 0;
+            padding: 22px 18px;
+            background: var(--work-card);
+            border: 1px solid var(--work-border);
+            border-radius: 18px;
+            transition: transform .3s ease, border-color .3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--work-purple-light);
+        }
+
+        .tech-icon {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 13px;
+            background: var(--work-bg-soft);
+            font-size: 23px;
+        }
+
+        .tech-icon.html { color: #E34F26; }
+        .tech-icon.css { color: #1572B6; }
+        .tech-icon.js { color: #D6AD00; }
+        .tech-icon.python { color: #3776AB; }
+        .tech-icon.react { color: #61DAFB; }
+        .tech-icon.node { color: #339933; }
+        .tech-icon.database { color: #47A248; }
+        .tech-icon.ai { color: #8B5CF6; }
+        .tech-icon.cloud { color: #F59E0B; }
+        .tech-icon.api { color: #0D9488; }
+        .tech-icon.figma { color: #F24E1E; }
+        .tech-icon.stripe { color: #635BFF; }
+        .tech-icon.java { color: #E76F00; }
+        .tech-icon.docker { color: #2496ED; }
+        .tech-icon.aws { color: #FF9900; }
+        .tech-icon.analytics { color: #16A34A; }
+
+        .tech-card h3 {
+            color: var(--work-text);
+            font-size: 13px;
+            margin: 0 0 5px;
+        }
+
+        .tech-card p {
+            color: var(--work-muted);
+            font-size: 11px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* WORK PROCESS */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .process-card {
+            padding: 25px 18px;
+            background: var(--work-card);
+            border: 1px solid var(--work-border);
+            border-radius: 20px;
+            text-align: center;
+            transition: transform .3s ease, border-color .3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--work-purple-light);
+        }
+
+        .process-number {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border-radius: 14px;
+            background: var(--work-gradient);
+            color: #FFFFFF;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .process-card h3 {
+            color: var(--work-text);
+            font-size: 15px;
+            margin: 0 0 10px;
+        }
+
+        .process-card p {
+            color: var(--work-muted);
+            font-size: 12px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* CTA */
+
+        .work-cta-section {
+            padding: 80px 20px 105px;
+            background: var(--work-bg);
+        }
+
+        .work-cta {
+            max-width: 1050px;
+            margin: auto;
+            padding: 70px 30px;
+            text-align: center;
+            border-radius: 30px;
+            border: 1px solid var(--work-border);
+            background: linear-gradient(
+                135deg,
+                rgba(124,58,237,.08),
+                rgba(37,99,235,.08)
+            );
+        }
+
+        body.dark-theme .work-cta {
+            background: linear-gradient(
+                135deg,
+                rgba(124,58,237,.14),
+                rgba(37,99,235,.12)
+            );
+        }
+
+        .work-cta h2 {
+            color: var(--work-text);
+            font-size: clamp(30px, 5vw, 46px);
+            line-height: 1.2;
+            margin: 0 0 18px;
+        }
+
+        .work-cta p {
+            max-width: 600px;
+            margin: 0 auto 28px;
+            color: var(--work-muted);
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        /* SCROLL REVEAL */
+
+        .work-reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .65s ease, transform .65s ease;
+        }
+
+        .work-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes workFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .project-card {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .work-hero {
+                min-height: auto;
+                padding: 125px 20px 75px;
+            }
+
+            .work-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .work-stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .work-stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .work-stat:nth-child(-n+2) {
+                border-bottom: 1px solid var(--work-border);
+            }
+
+            .work-section {
+                padding: 70px 0;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                min-height: 325px;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .work-cta {
+                padding: 50px 22px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .work-container {
+                width: calc(100% - 30px);
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-btn {
+                width: 100%;
+            }
+
+            .project-card {
+                padding: 22px;
+            }
+
+            .work-hero-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .work-reveal,
+            .work-hero-content,
+            .project-card,
+            .tech-card,
+            .process-card {
+                animation: none;
+                transition: none;
+            }
+
+            .work-reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER: SAME STRUCTURE AND SHARED STYLES AS ABOUT.HTML -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/pragu-logo.png"
+                 alt="Pragu Software Solutions"
+                 class="logo-image">
+            <div class="logo-name">PRAGU SOFTWARE SOLUTIONS</div>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="work.html" class="active">Our Work</a>
+            <a href="contact.html">Contact Us</a>
+
+            <button class="theme-toggle"
+                    id="themeToggle"
+                    type="button"
+                    aria-label="Toggle theme"
+                    aria-pressed="false">
+                <span id="themeIcon">☾</span>
+            </button>
+
+            <a href="contact.html" class="quote-btn">
+                Get a Quote <span>→</span>
+            </a>
+        </nav>
+
+        <button class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+            ☰
+        </button>
+    </header>
+
+    <main class="work-page">
+
+        <!-- HERO -->
+        <section class="work-hero">
+            <div class="work-hero-content">
+                <div class="work-label">
+                    <span class="work-label-dot"></span>
+                    OUR PROJECT PORTFOLIO
+                </div>
+
+                <h1>
+                    Turning Ideas Into
+                    <span class="work-gradient">Digital Impact.</span>
+                </h1>
+
+                <p>
+                    Explore how we transform real-world challenges into
+                    intelligent digital solutions through modern web
+                    development, artificial intelligence and innovative design.
+                </p>
+
+                <div class="work-hero-actions">
+                    <a href="#projects" class="work-btn work-btn-primary">
+                        Explore Our Projects <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a href="contact.html" class="work-btn work-btn-secondary">
+                        Start a Project <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="work-stats-section">
+            <div class="work-stats">
+                <div class="work-stat">
+                    <h3>08</h3>
+                    <p>Featured Projects</p>
+                </div>
+
+                <div class="work-stat">
+                    <h3>04+</h3>
+                    <p>Project Domains</p>
+                </div>
+
+                <div class="work-stat">
+                    <h3>10+</h3>
+                    <p>Technologies</p>
+                </div>
+
+                <div class="work-stat">
+                    <h3>100%</h3>
+                    <p>Commitment</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="work-section soft" id="projects">
+            <div class="work-container">
+
+                <div class="work-heading work-reveal">
+                    <span class="work-heading-label">OUR PORTFOLIO</span>
+                    <h2>
+                        Projects That Create
+                        <span class="work-gradient">Real Impact.</span>
+                    </h2>
+                    <p>
+                        From AI-powered tools to business platforms,
+                        each project is designed to solve a problem
+                        and deliver a meaningful user experience.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- PROJECT 1 -->
+                    <article class="project-card project-cashflow work-reveal">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <span class="project-number">PROJECT 01</span>
+                        </div>
+
+                        <span class="project-category">FINTECH · AI</span>
+                        <h3>CashFlow Rescue AI</h3>
+                        <p class="project-description">
+                            An intelligent financial assistant that helps users
+                            understand cash flow, identify spending risks,
+                            forecast upcoming expenses and make better
+                            financial decisions.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-python" style="color:#3776AB"></i> Python</span>
+                            <span class="tech-tag"><i class="fas fa-brain" style="color:#8B5CF6"></i> AI Analytics</span>
+                            <span class="tech-tag"><i class="fas fa-chart-line" style="color:#16A34A"></i> Forecasting</span>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 2 -->
+                    <article class="project-card project-cafe work-reveal">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                            <span class="project-number">PROJECT 02</span>
+                        </div>
+
+                        <span class="project-category">WEB DEVELOPMENT</span>
+                        <h3>Modern Café Website</h3>
+                        <p class="project-description">
+                            A visually engaging café website featuring an
+                            attractive menu, featured products, responsive
+                            layouts and a welcoming digital experience
+                            for customers.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-html5" style="color:#E34F26"></i> HTML5</span>
+                            <span class="tech-tag"><i class="fab fa-css3-alt" style="color:#1572B6"></i> CSS3</span>
+                            <span class="tech-tag"><i class="fab fa-js" style="color:#D6AD00"></i> JavaScript</span>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 3 -->
+                    <article class="project-card project-restaurant work-reveal">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <span class="project-number">PROJECT 03</span>
+                        </div>
+
+                        <span class="project-category">BUSINESS WEBSITE</span>
+                        <h3>Restaurant Website</h3>
+                        <p class="project-description">
+                            A restaurant website that showcases menus,
+                            signature dishes, restaurant information and
+                            contact details through a simple, modern
+                            and mobile-friendly interface.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-html5" style="color:#E34F26"></i> HTML</span>
+                            <span class="tech-tag"><i class="fab fa-css3-alt" style="color:#1572B6"></i> CSS</span>
+                            <span class="tech-tag"><i class="fab fa-js" style="color:#D6AD00"></i> JavaScript</span>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 4 -->
+                    <article class="project-card project-medical work-reveal">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <i class="fas fa-heart-pulse"></i>
+                            </div>
+                            <span class="project-number">PROJECT 04</span>
+                        </div>
+
+                        <span class="project-category">HEALTHCARE · AI</span>
+                        <h3>Medical Resource Allocator</h3>
+                        <p class="project-description">
+                            A healthcare resource planning concept that helps
+                            hospitals monitor resource availability, identify
+                            shortages and support more informed allocation
+                            decisions.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-python" style="color:#3776AB"></i> Python</span>
+                            <span class="tech-tag"><i class="fas fa-database" style="color:#47A248"></i> Database</span>
+                            <span class="tech-tag"><i class="fas fa-chart-pie" style="color:#E11D48"></i> Analytics</span>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 5 -->
+                    <article class="project-card project-infra work-reveal">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <i class="fas fa-shield-halved"></i>
+                            </div>
+                            <span class="project-number">PROJECT 05</span>
+                        </div>
+
+                        <span class="project-category">INFRASTRUCTURE · AI</span>
+                        <h3>InfraGuard AI</h3>
+                        <p class="project-description">
+                            An AI-assisted infrastructure monitoring concept
+                            designed to analyse reported issues, identify
+                            potential risks, prioritise maintenance and
+                            support faster decision-making.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-python" style="color:#3776AB"></i> Python</span>
+                            <span class="tech-tag"><i class="fas fa-brain" style="color:#8B5CF6"></i> AI</span>
+                            <span class="tech-tag"><i class="fas fa-cloud" style="color:#2563EB"></i> Cloud</span>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 6 -->
+                    <article class="project-card project-crm work-reveal">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <i class="fas fa-users-gear"></i>
+                            </div>
+                            <span class="project-number">PROJECT 06</span>
+                        </div>
+
+                        <span class="project-category">BUSINESS · CRM</span>
+                        <h3>Digital CRM</h3>
+                        <p class="project-description">
+                            A customer relationship management platform
+                            concept for organising customer information,
+                            tracking leads, managing follow-ups and
+                            improving business workflows.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-js" style="color:#D6AD00"></i> JavaScript</span>
+                            <span class="tech-tag"><i class="fas fa-database" style="color:#47A248"></i> Database</span>
+                            <span class="tech-tag"><i class="fas fa-chart-line" style="color:#7C3AED"></i> Analytics</span>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 7 -->
+                    <article class="project-card project-ecommerce work-reveal">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <i class="fas fa-cart-shopping"></i>
+                            </div>
+                            <span class="project-number">PROJECT 07</span>
+                        </div>
+
+                        <span class="project-category">E-COMMERCE</span>
+                        <h3>E-commerce Platform</h3>
+                        <p class="project-description">
+                            An online shopping platform concept with product
+                            listings, category navigation, shopping cart
+                            interactions and a clean interface designed
+                            for a smooth customer journey.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-html5" style="color:#E34F26"></i> HTML</span>
+                            <span class="tech-tag"><i class="fab fa-css3-alt" style="color:#1572B6"></i> CSS</span>
+                            <span class="tech-tag"><i class="fab fa-js" style="color:#D6AD00"></i> JavaScript</span>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 8 -->
+                    <article class="project-card project-cloud work-reveal">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <i class="fas fa-cloud-arrow-up"></i>
+                            </div>
+                            <span class="project-number">PROJECT 08</span>
+                        </div>
+
+                        <span class="project-category">CLOUD · COST OPTIMISATION</span>
+                        <h3>CloudCost Guard</h3>
+                        <p class="project-description">
+                            A cloud cost monitoring concept that helps teams
+                            review spending patterns, identify possible
+                            waste and understand opportunities for
+                            improving cloud resource utilisation.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag"><i class="fab fa-aws" style="color:#FF9900"></i> AWS</span>
+                            <span class="tech-tag"><i class="fas fa-chart-column" style="color:#0891B2"></i> Analytics</span>
+                            <span class="tech-tag"><i class="fas fa-cloud" style="color:#2563EB"></i> Cloud</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNOLOGY STACK -->
+        <section class="work-section">
+            <div class="work-container">
+                <div class="work-heading work-reveal">
+                    <span class="work-heading-label">OUR TOOLKIT</span>
+                    <h2>
+                        Technologies Behind
+                        <span class="work-gradient">Our Work.</span>
+                    </h2>
+                    <p>
+                        We use modern tools and technologies to create
+                        reliable, responsive and scalable digital products.
+                    </p>
+                </div>
+
+                <div class="tech-grid">
+
+                    <div class="tech-card work-reveal">
+                        <div class="tech-icon html"><i class="fab fa-html5"></i></div>
+                        <div><h3>Frontend</h3><p>HTML, CSS, JavaScript</p></div>
+                    </div>
+
+                    <div class="tech-card work-reveal">
+                        <div class="tech-icon python"><i class="fab fa-python"></i></div>
+                        <div><h3>Python</h3><p>Automation and AI workflows</p></div>
+                    </div>
+
+                    <div class="tech-card work-reveal">
+                        <div class="tech-icon database"><i class="fas fa-database"></i></div>
+                        <div><h3>Databases</h3><p>Data storage and management</p></div>
+                    </div>
+
+                    <div class="tech-card work-reveal">
+                        <div class="tech-icon ai"><i class="fas fa-brain"></i></div>
+                        <div><h3>AI / ML</h3><p>Intelligent analysis</p></div>
+                    </div>
+
+                    <div class="tech-card work-reveal">
+                        <div class="tech-icon cloud"><i class="fas fa-cloud"></i></div>
+                        <div><h3>Cloud</h3><p>Cloud-based solutions</p></div>
+                    </div>
+
+                    <div class="tech-card work-reveal">
+                        <div class="tech-icon api"><i class="fas fa-plug"></i></div>
+                        <div><h3>APIs</h3><p>System integrations</p></div>
+                    </div>
+
+                    <div class="tech-card work-reveal">
+                        <div class="tech-icon node"><i class="fab fa-node-js"></i></div>
+                        <div><h3>Backend</h3><p>Application logic</p></div>
+                    </div>
+
+                    <div class="tech-card work-reveal">
+                        <div class="tech-icon figma"><i class="fab fa-figma"></i></div>
+                        <div><h3>UI / UX</h3><p>User-focused design</p></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR PROCESS -->
+        <section class="work-section soft">
+            <div class="work-container">
+                <div class="work-heading work-reveal">
+                    <span class="work-heading-label">HOW WE WORK</span>
+                    <h2>
+                        From First Idea To
+                        <span class="work-gradient">Final Product.</span>
+                    </h2>
+                    <p>
+                        A clear, collaborative process helps us turn
+                        your ideas into practical digital experiences.
+                    </p>
+                </div>
+
+                <div class="process-grid">
+
+                    <article class="process-card work-reveal">
+                        <div class="process-number">01</div>
+                        <h3>Understand</h3>
+                        <p>We learn about your goals, users and challenges.</p>
+                    </article>
+
+                    <article class="process-card work-reveal">
+                        <div class="process-number">02</div>
+                        <h3>Design</h3>
+                        <p>We plan the interface and user experience.</p>
+                    </article>
+
+                    <article class="process-card work-reveal">
+                        <div class="process-number">03</div>
+                        <h3>Develop</h3>
+                        <p>We build the solution using suitable technologies.</p>
+                    </article>
+
+                    <article class="process-card work-reveal">
+                        <div class="process-number">04</div>
+                        <h3>Test</h3>
+                        <p>We check functionality, usability and quality.</p>
+                    </article>
+
+                    <article class="process-card work-reveal">
+                        <div class="process-number">05</div>
+                        <h3>Launch</h3>
+                        <p>We prepare the product for delivery and use.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="work-cta-section">
+            <div class="work-cta work-reveal">
+                <h2>
+                    Have An Idea?
+                    <span class="work-gradient">Let's Make It Real.</span>
+                </h2>
+                <p>
+                    Whether you need a website, a business application
+                    or an AI-powered solution, let's discuss how we
+                    can bring your idea to life.
+                </p>
+                <a href="contact.html" class="work-btn work-btn-primary">
+                    Start a Project <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER: UPDATED SOCIAL LINKS AND EMAIL -->
+    <footer class="footer">
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="images/pragu-logo.png"
+                         alt="Pragu Software Solutions"
+                         class="logo-image"
+                         loading="lazy">
+                    <div class="logo-name">PRAGU SOFTWARE SOLUTIONS</div>
+                </a>
+
+                <p>
+                    Building modern digital solutions
+                    that help businesses grow and
+                    move forward.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="work.html">Our Work</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <a href="services.html">Website Development</a>
+                <a href="services.html">Web Applications</a>
+                <a href="services.html">AI Solutions</a>
+                <a href="services.html">E-Commerce</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Connect</h3>
+
+                <a href="https://www.linkedin.com/in/pragadeshwaran05/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn">LinkedIn</a>
+
+                <a href="https://www.instagram.com/hey_itz_pragu/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram">Instagram</a>
+
+                <a href="https://github.com/Pragadeshwaran05/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="GitHub">GitHub</a>
+
+                <a href="mailto:priya19072006@gmail.com">priya19072006@gmail.com</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Pragu Software Solutions. All Rights Reserved.</span>
+            <span>Built with purpose &amp; technology.</span>
+        </div>
+    </footer>
+
+    <script>
+        /* =========================================
+           THEME TOGGLE — SHARED WITH ABOUT.HTML
+        ========================================= */
+
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+
+        function applyTheme(theme) {
+            const isDark = theme === "dark";
+
+            document.body.classList.toggle("dark-theme", isDark);
+
+            if (themeIcon) {
+                themeIcon.textContent = isDark ? "☀" : "☾";
+            }
+
+            if (themeToggle) {
+                themeToggle.setAttribute("aria-pressed", String(isDark));
+            }
+        }
+
+        let savedTheme = "light";
+
+        try {
+            savedTheme = localStorage.getItem("pragu-theme") || "light";
+        } catch (error) {
+            savedTheme = "light";
+        }
+
+        applyTheme(savedTheme);
+
+        if (themeToggle) {
+            themeToggle.addEventListener("click", () => {
+                const isDark = document.body.classList.contains("dark-theme");
+                const nextTheme = isDark ? "light" : "dark";
+
+                applyTheme(nextTheme);
+
+                try {
+                    localStorage.setItem("pragu-theme", nextTheme);
+                } catch (error) {
+                    /* Theme still works when storage is unavailable. */
+                }
+            });
+        }
+
+        /* =========================================
+           MOBILE NAVIGATION — SAME AS ABOUT.HTML
+        ========================================= */
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (menuBtn && navLinks) {
+            menuBtn.addEventListener("click", () => {
+                const isOpen = navLinks.classList.toggle("show");
+                menuBtn.setAttribute("aria-expanded", String(isOpen));
+            });
+
+            navLinks.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("show");
+                    menuBtn.setAttribute("aria-expanded", "false");
+                });
+            });
+        }
+
+        /* =========================================
+           SCROLL REVEAL
+        ========================================= */
+
+        const workRevealElements = document.querySelectorAll(".work-reveal");
+
+        if ("IntersectionObserver" in window) {
+            const workObserver = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.12 }
+            );
+
+            workRevealElements.forEach((element) => {
+                workObserver.observe(element);
+            });
+        } else {
+            workRevealElements.forEach((element) => {
+                element.classList.add("visible");
+            });
+        }
+
+        /* =========================================
+           PAGE TRANSITION
+        ========================================= */
+
+        document.querySelectorAll('a[href$=".html"]').forEach((link) => {
+            link.addEventListener("click", (event) => {
+                const href = link.getAttribute("href");
+
+                if (
+                    !href ||
+                    href.startsWith("#") ||
+                    event.ctrlKey ||
+                    event.metaKey ||
+                    event.shiftKey ||
+                    event.altKey ||
+                    link.target === "_blank"
+                ) {
+                    return;
+                }
+
+                const targetUrl = new URL(href, window.location.href);
+
+                if (
+                    targetUrl.origin !== window.location.origin ||
+                    targetUrl.pathname === window.location.pathname
+                ) {
+                    return;
+                }
+
+                event.preventDefault();
+                document.body.classList.add("page-exit");
+
+                window.setTimeout(() => {
+                    window.location.href = targetUrl.href;
+                }, 350);
+            });
+        });
+    </script>
+
+</body>
+</html>
